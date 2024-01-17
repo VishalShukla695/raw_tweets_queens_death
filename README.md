@@ -1,0 +1,33 @@
+Answers to the Queen Elizabeth II Tweets dataset analysis with step-by-step explanations:
+
+1. Find the user with the most retweets:
+
+We use the idxmax function on the retweets_count column to find the index of the tweet with the maximum number of retweets.
+We then use the index retrieved from idxmax to locate the corresponding username in the username column.
+The output will display the username of the account with the most retweeted tweet.
+
+2. Find the most effective tweet (using a custom measure):
+
+We create a new column called effectiveness.
+This column calculates a score for each tweet based on its retweets divided by the number of days since Queen Elizabeth II's death.
+We use idxmax again but this time on the effectiveness column to find the tweet with the highest score.
+Finally, we print the content of that tweet and its corresponding retweet count and publication date for context.
+
+3. Show language and place distribution:
+
+We use the value_counts method on the language and place columns to get a frequency table of languages and locations mentioned in the tweets.
+We then use plot with the kind set to bar to visualize these frequency tables as bar charts.
+These charts offer insights into the geographical and linguistic reach of the tweets about the Queen's death.
+
+4. Visualize relationships between likes, retweets, and replies:
+
+We create scatter plots using scatter from matplotlib.
+The first plot shows likes on the x-axis and retweets on the y-axis. This helps visualize potential correlations between how much a tweet is liked and how often it is retweeted.
+The second plot shows likes on the x-axis and replies on the y-axis. This helps understand how much engagement in terms of replies a tweet receives compared to its popularity by likes.
+
+5. Analyze the impact of videos on likes:
+
+We filter the dataframe to separate tweets with videos (video column) and those without.
+We calculate the mean likes for each group using mean on the likes_count column.
+We compare the mean likes of tweets with video to those without to see if a significant difference exists.
+Based on the comparison, we can draw conclusions about whether tweets with videos tend to receive more likes than those without videos in this specific dataset.
